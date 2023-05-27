@@ -15,7 +15,16 @@ from tkinter import messagebox, simpledialog, Tk
 if __name__ == '__main__':
     # TODO) Ask the user for their score on the FIRST test and store their
     #  score in a variable
+    window = Tk()
+    window.withdraw()
+    test1 = simpledialog.askstring('', "What did you get on first test")
+    test2 = simpledialog.askstring('', "What did you get on 2nd test")
+    score = (int(test1)+int(test2))/2
+    if score>= 90:
+        messagebox.showinfo('',"A: "+str(score))
 
+    elif score<90:
+        messagebox.showinfo('',"bad")
     # TODO) Ask the user for their score on the SECOND test and store their
     #  score in a variable
 
