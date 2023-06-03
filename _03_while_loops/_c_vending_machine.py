@@ -35,7 +35,16 @@ if __name__ == '__main__':
     window.withdraw()
 
     money_in_dollars = 3.00
-
+    while(money_in_dollars>0.00):
+        money_spent = vending_machine(money_in_dollars)
+        if(money_spent==0):
+            messagebox.showinfo('',"You still have money: "+ str(money_in_dollars))
+        else:
+            money_in_dollars-=money_spent
+    if(money_in_dollars==0):
+        messagebox.showinfo('',"goodjob you spent all money")
+    elif(money_in_dollars<0):
+        messagebox.showinfo('',"you are in crippling debt")
     # TODO) Write a while loop that ends when you have no money left
 
         # TODO) Call the vending_machine() function and save the money spent

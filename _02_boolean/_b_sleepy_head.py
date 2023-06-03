@@ -2,9 +2,36 @@
 Use boolean variables to control program logic between two different code
 paths.
 """
-
-
+import turtle
+from tkinter import messagebox, Tk, simpledialog
 if __name__ == '__main__':
+    window = Tk()
+    window.withdraw()
+    weekend = False
+    day = simpledialog.askstring('',"Is it the weekend")
+    if(day == "yes"):
+        weekend = True
+    if weekend:
+        messagebox.showinfo('',"sleep")
+    else:
+        print("wake")
+
+    color = simpledialog.askstring('',"Is it red?")
+    red = False
+    shape = simpledialog.askstring('',"Is it a square")
+    square = False
+    if color=="yes":
+        red=True
+    if shape=="yes":
+        square = True
+    if square and color:
+        rob = turtle.Turtle()
+        rob.pendown()
+        rob.pencolor("Red")
+        for i in range(4):
+            rob.forward(10)
+            rob.right(90)
+
     # TODO)
     #  1. Use a boolean variable to indicate if it is the weekend.
     #     Display a different message to the user depending on whether it is
